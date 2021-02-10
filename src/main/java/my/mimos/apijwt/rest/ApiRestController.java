@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 import my.mimos.apijwt.entity.User;
 import my.mimos.apijwt.rest.request.LoginForm;
 import my.mimos.apijwt.service.UserDetailService;
-import sun.security.provider.certpath.OCSPResponse.ResponseStatus;
 
 @RestController
 @RequestMapping("api/auth")
@@ -35,7 +34,7 @@ public class ApiRestController {
 		User user =  userDetailService.loginUser(loginForm.getUsername(), 
 				loginForm.getPassword());
 		if (loginForm.getPassword().equals(user.getPassword())) {
-			return ResponseEntity.ok("login succesful ");
+			return ResponseEntity.ok("login succesful");
 		}
 		else {
 		return ResponseEntity.ok("not found");
