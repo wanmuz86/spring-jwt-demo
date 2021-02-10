@@ -20,8 +20,10 @@ public class UserDetailServiceImpl implements UserDetailService {
 
 	@Override
 	public User loginUser(String username, String password) {
-		// TODO Find by username & password...
-		return null;
+	
+		// I will do the password verification on Controller instead 
+		
+		return userRepo.findOneByUsername(username);
 	}
 
 }
